@@ -19,3 +19,4 @@ Windows driver replacement helper with a drag-and-drop GUI.
 - 這會修改受保護的 Windows DriverStore、HKLM 與 BCD，請只在有完整備份的測試機使用。
 - `testsigning on` 通常需要重新啟動才會生效，也會降低 Windows 驅動簽章防護。
 - 工具使用 PowerShell WinForms，不需要安裝第三方套件。若要產生單一 `.exe`，可在有 .NET SDK 的環境中使用 PS2EXE 等受信任的封裝工具；目前專案刻意保留原始 `.ps1` 方便稽核每一個系統操作。
+- 若下載後雙擊沒有畫面，請查看 `%TEMP%\TakeownTool-startup.log`。也可先解除 `TakeownTool.exe` 內容的 Windows 封鎖：右鍵檔案 -> 內容 -> 勾選「解除封鎖」-> 套用。

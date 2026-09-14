@@ -179,7 +179,9 @@ $browseDriver.Add_Click({
 })
 $form.Controls.Add($browseDriver)
 
-$script:targetText = Add-InputRow 'takeown 資料夾路徑（可填 package 資料夾或 FileRepository）' 160 (if ($TargetPath) { $TargetPath } else { $repositoryRoot })
+$initialTargetPath = $repositoryRoot
+if ($TargetPath) { $initialTargetPath = $TargetPath }
+$script:targetText = Add-InputRow 'takeown 資料夾路徑（可填 package 資料夾或 FileRepository）' 160 $initialTargetPath
 $browseTarget = New-Object Windows.Forms.Button
 $browseTarget.Text = '...'
 $browseTarget.Location = New-Object Drawing.Point(704, 182)
